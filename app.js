@@ -40,7 +40,7 @@ app.post("/",function(req,res){
     const request = https.request(url,options,function(response){  
          
             res.sendFile(__dirname+"/index.html");
-        } 
+        
         response.on("data",function(data){
             console.log(JSON.parse(data));
         });
