@@ -38,11 +38,9 @@ app.post("/",function(req,res){
         auth:"jaya:08fce7edb1e09010410a95624391a1fd-us8"
     }
     const request = https.request(url,options,function(response){  
-        if(response.statusCode===200){
+         
             res.sendFile(__dirname+"/index.html");
-        }else{
-            res.sendFile(__dirname+"/failure.html");
-        }
+        } 
         response.on("data",function(data){
             console.log(JSON.parse(data));
         });
